@@ -90,3 +90,13 @@ Ejemplo de prueba con 10 usuarios concurrentes:
 Resultados de Latencia
 El análisis mostró un tiempo promedio de respuesta de 850ms, cumpliendo con el objetivo de latencia.
 
+# Performance testing: Load Testing
+Propósito: Evaluar cómo el sistema maneja un número esperado de usuarios simultáneos o solicitudes dentro de condiciones normales.
+
+# Teorema de CAP (C y P)
+Consistencia (C): Todas las réplicas tienen los mismos datos en todo momento.
+Disponibilidad (A): Cada solicitud recibe una respuesta, aunque los datos puedan no estar actualizados.
+Tolerancia a particiones (P): El sistema continúa funcionando incluso si hay fallos de red que separan las réplicas.
+
+# Logs agregados
+
