@@ -7,6 +7,9 @@ router = APIRouter(prefix="/personas", tags=["Personas"])
 
 @router.post("/", response_model=schemas.Persona)
 def create_persona(persona: schemas.PersonaCreate, db: Session = Depends(get_db)):
+    # si no tiene dni error 422
+    if not persona.nombre:
+        raise HTTPException(status_code=422, detail="Nombre es requerido")
     db_persona = models.Persona(**persona.dict())
     db.add(db_persona)
     db.commit()
