@@ -37,9 +37,9 @@ Las siguientes capturas de Postman demuestran la funcionalidad de la API. Happy 
 
 ## DELETE /conciertos/{id}: Eliminar un concierto.
 
-![Post method](https://github.com/iisabellaromero/ExamenFinal/images/post.png "Post")
+![Post method](https://github.com/iisabellaromero/ExamenFinal/tree/main/images/post.png "Post")
 
-![404](https://github.com/iisabellaromero/ExamenFinal/images/404.png "404")
+![404](https://github.com/iisabellaromero/ExamenFinal/tree/main/images/404.png "404")
 
 
 
@@ -69,7 +69,7 @@ uvicorn main:app --reload
 
 4. Code Coverage
 Se utilizaron pytest y coverage.py para evaluar el código. El resultado final muestra una cobertura de 85% 
-![coverage](https://github.com/iisabellaromero/ExamenFinal/images/coverage.png "Coverage")
+![coverage](https://github.com/iisabellaromero/ExamenFinal/tree/main/images/coverage.png "Coverage")
 
 
 
@@ -88,11 +88,11 @@ La latencia de este endpoint debe ser menor a 1000ms en el happy path, lo cual i
 - Validación de la solicitud.
 - Consulta y actualización en la base de datos.
 - Obteniendo Datos de Latencia
-![latency](https://github.com/iisabellaromero/ExamenFinal/images/latency.png "latency")
+![latency](https://github.com/iisabellaromero/ExamenFinal/tree/main/images/latency.png "latency")
 
 ### Usamos JMeter para simular carga en el endpoint.
 Ejemplo de prueba con 10 usuarios concurrentes, con Ramp up de 10 segundos y loop count de 10 
-![jmeter](https://github.com/iisabellaromero/ExamenFinal/images/jmeter2.png "jmeter")
+![jmeter](https://github.com/iisabellaromero/ExamenFinal/tree/main/images/jmeter2.png "jmeter")
 
 
 # Performance testing: Load Testing
@@ -107,6 +107,6 @@ Tolerancia a particiones (P): El sistema continúa funcionando incluso si hay fa
 
 Agregamos un Log Parser script para poder procesar los logs del file segun la fecha
 
-![log](https://github.com/iisabellaromero/ExamenFinal/images/logfile.png "log file")
+![log](https://github.com/iisabellaromero/ExamenFinal/tree/main/images/logfile.png "log file")
 
-![log2](https://github.com/iisabellaromero/ExamenFinal/images/logparser.png "log parser results")
+![log2](https://github.com/iisabellaromero/ExamenFinal/tree/main/images/logparser.png "log parser results")
