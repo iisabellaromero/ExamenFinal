@@ -1,3 +1,5 @@
+https://github.com/iisabellaromero/ExamenFinal
+
 # 1.  Creación de Datos
 ## Script de Base de Datos: baseDeDatos.sql
 Este script inicializa las tablas necesarias para gestionar los conciertos y tickets. Los campos y relaciones están diseñados para reflejar las dependencias entre los conciertos y sus tickets.
@@ -22,6 +24,7 @@ Ticket:
 # 2. Integration Test (Base de Datos)
 ## Pruebas de CRUD usando Postman
 Las siguientes capturas de Postman demuestran la funcionalidad de la API. Happy path y errores comunes se muestran en el contexto de un CRUD completo.
+
 ## POST /personas 
 
 ## GET /personas
@@ -33,6 +36,13 @@ Las siguientes capturas de Postman demuestran la funcionalidad de la API. Happy 
 ## PUT /conciertos/{id}: Actualizar un concierto.
 
 ## DELETE /conciertos/{id}: Eliminar un concierto.
+
+![Post method](post.png "Post")
+
+![404](404.png "404")
+
+
+
 
 # 3. Código Completo de la API
 
@@ -54,41 +64,36 @@ Iniciar servidor:
 bash
 Copiar código
 uvicorn main:app --reload
-4. Code Coverage
-Resultados de Cobertura
-Se utilizaron pytest y coverage.py para evaluar el código. El resultado final muestra una cobertura de 90%.
 
-Reporte Resumido
-bash
-Copiar código
-Name                        Stmts   Miss  Cover
------------------------------------------------
-app/main.py                   15      1    93%
-app/routers/concierto.py      50      5    90%
-app/routers/ticket.py         45      4    91%
------------------------------------------------
-TOTAL                        110     10    90%
-Reporte HTML
-Se generó un reporte HTML detallado (htmlcov/index.html) para identificar las líneas no cubiertas.
+
+
+4. Code Coverage
+Se utilizaron pytest y coverage.py para evaluar el código. El resultado final muestra una cobertura de 85% 
+![coverage](coverage.png "Coverage")
+
+
+
 
 5. Endpoint Happy Path
-Descripción del Happy Path
-El endpoint POST /tickets/comprar se considera el happy path principal, ya que representa la operación más común: la compra de un ticket.
+=El endpoint POST /tickets se considera el happy path principal, ya que representa la operación más común: la compra de un ticket.
 
 Flujo esperado:
 Verifica la disponibilidad de boletos.
 Registra un nuevo ticket si hay capacidad disponible.
 Retorna una confirmación exitosa.
+
 Latencia Objetivo
 La latencia de este endpoint debe ser menor a 1000ms en el happy path, lo cual incluye:
 
-Validación de la solicitud.
-Consulta y actualización en la base de datos.
-Obteniendo Datos de Latencia
-Usamos JMeter para simular carga en el endpoint.
-Ejemplo de prueba con 10 usuarios concurrentes:
-Resultados de Latencia
-El análisis mostró un tiempo promedio de respuesta de 850ms, cumpliendo con el objetivo de latencia.
+- Validación de la solicitud.
+- Consulta y actualización en la base de datos.
+- Obteniendo Datos de Latencia
+![latency](latency.png "latency")
+
+### Usamos JMeter para simular carga en el endpoint.
+Ejemplo de prueba con 10 usuarios concurrentes, con Ramp up de 10 segundos y loop count de 10 
+![jmeter](jmeter2.png "jmeter")
+
 
 # Performance testing: Load Testing
 Propósito: Evaluar cómo el sistema maneja un número esperado de usuarios simultáneos o solicitudes dentro de condiciones normales.
@@ -100,3 +105,8 @@ Tolerancia a particiones (P): El sistema continúa funcionando incluso si hay fa
 
 # Logs agregados
 
+Agregamos un Log Parser script para poder procesar los logs del file segun la fecha
+
+![log](logfile.png "log file")
+
+![log2](logparser.png "log parser results")
