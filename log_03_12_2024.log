@@ -1,0 +1,7 @@
+2024-12-03 21:50:40,857 - INFO - Éxito en ejecución: Persona creada con éxito
+2024-12-03 21:51:20,688 - ERROR - Error en ejecución: (sqlite3.IntegrityError) UNIQUE constraint failed: persona.dni
+[SQL: INSERT INTO persona (dni, nombre, apellido) VALUES (?, ?, ?)]
+[parameters: ('8989889', 'Isabella', 'Romero')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2024-12-03 21:52:58,256 - ERROR - Error en ejecución: 409: Persona already exists
+2024-12-03 21:53:02,968 - ERROR - Error en ejecución: 409: Persona already exists
