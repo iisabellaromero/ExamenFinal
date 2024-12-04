@@ -7,6 +7,16 @@ router = APIRouter(prefix="/tickets", tags=["Tickets"])
 
 @router.post("/", response_model=schemas.Ticket)
 def create_ticket(ticket: schemas.TicketCreate, db: Session = Depends(get_db)):
+    #only the id_concierto exists in db
+    db_concierto = db.query(models.Concierto).filter(models.Concierto.id_concierto == ticket.id_concierto).first()
+    if not db_concierto:
+        raise HTTPException(status_code=404, detail="Concierto not found")
+    #Only if dni exists in db
+    if ticket.dni:
+        db_persona = db.query(models.Persona).filter(models.Persona.dni == ticket.dni).first()
+        if not db_persona:
+            raise HTTPException(status_code=404, detail="Persona not found")
+
     db_ticket = models.Ticket(**ticket.dict())
     db.add(db_ticket)
     db.commit()
