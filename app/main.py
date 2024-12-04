@@ -12,6 +12,8 @@ app.include_router(concierto.router)
 app.include_router(persona.router)
 app.include_router(ticket.router)
 
+
+
 @app.get("/")
 def root():
     return {"message": "Bienvenido a la API de gestión de conciertos"}

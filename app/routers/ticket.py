@@ -13,7 +13,7 @@ def create_ticket(ticket: schemas.TicketCreate, db: Session = Depends(get_db)):
     db.refresh(db_ticket)
     return db_ticket
 
-@router.get("/", response_model=List[schemas.Ticket])
+@router.get("/", response_model=list[schemas.Ticket])
 def list_tickets(db: Session = Depends(get_db)):
     return db.query(models.Ticket).all()
 
